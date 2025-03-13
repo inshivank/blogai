@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Lock, Heart } from 'lucide-react';
 
 const NavBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -30,6 +31,9 @@ const NavBar: React.FC = () => {
       transition={{ duration: 0.3 }}
     >
       <div className="container mx-auto px-4 py-5 max-w-4xl flex justify-between items-center">
+        <div className="w-24">
+          {/* Empty div to balance the layout */}
+        </div>
         <Link to="/" className="text-2xl font-bold tracking-tight text-blog-dark transition-colors hover:text-blog-accent">
           Minimal Blog
         </Link>
@@ -53,6 +57,16 @@ const NavBar: React.FC = () => {
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.2, delay: 0.1 }}
+            >
+              <Link to="/family-friends" className="flex items-center gap-1 text-blog-dark hover:text-blog-accent transition-colors">
+                <Heart size={16} />
+                <span>Family & Friends</span>
+              </Link>
+            </motion.li>
+            <motion.li 
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.2, delay: 0.2 }}
             >
               <Link to="/write" className="px-4 py-2 bg-blog-accent text-white rounded-md transition-all hover:bg-blog-accent/90 hover:shadow-md">
                 Write
