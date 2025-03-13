@@ -1,12 +1,300 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>effortless-blog-nook</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>SHIVANK - THE BLOG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Personal blog by Shivank" />
+    <meta name="author" content="Shivank" />
     <meta property="og:image" content="/og-image.png" />
+    <style>
+      /* Reset and base styles */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.6;
+          color: #000;
+          background-color: #fff;
+          padding-top: 80px; /* Space for fixed header */
+      }
+
+      /* Header styles */
+      .main-header-div {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 80px;
+          background-color: #000000;
+          display: flex;
+          align-items: center;
+          padding: 0 20px;
+          border-bottom: 2px solid #000;
+          z-index: 1000;
+      }
+
+      .left-name {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 900;
+          font-size: 24px;
+          letter-spacing: 1px;
+          width: 33.33%;
+          color: #4da6ff;
+      }
+
+      .center-title {
+          font-family: 'Merriweather', serif;
+          font-weight: 700;
+          font-size: 22px;
+          width: 33.33%;
+          text-align: center;
+          color: #ffffff;
+      }
+
+      .right-spacer {
+          width: 33.33%;
+          text-align: right;
+      }
+
+      .family-friends-link {
+          color: #ffffff;
+          text-decoration: none;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 700;
+          font-size: 16px;
+          transition: color 0.3s;
+      }
+
+      .family-friends-link:hover {
+          color: #4da6ff;
+      }
+
+      /* Content styles */
+      .content {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 40px 20px;
+      }
+
+      .content h2 {
+          font-family: 'Roboto', sans-serif;
+          font-size: 32px;
+          font-weight: 900;
+          margin-bottom: 40px;
+          text-align: center;
+          letter-spacing: 2px;
+          border-bottom: 1px solid #000;
+          padding-bottom: 10px;
+      }
+
+      /* Post styles */
+      .post {
+          margin-bottom: 60px;
+          border-bottom: 1px solid #eee;
+          padding-bottom: 40px;
+      }
+
+      .post:last-child {
+          border-bottom: none;
+      }
+
+      .post h3 {
+          font-family: 'Roboto', sans-serif;
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          color: #000;
+      }
+
+      .post-content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+      }
+
+      .post-content img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 4px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .text-content {
+          flex: 1;
+      }
+
+      .text-content h4 {
+          font-family: 'Merriweather', serif;
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 15px;
+          color: #0066cc; /* Blue accent color */
+      }
+
+      .text-content p {
+          font-family: 'Merriweather', serif;
+          font-size: 16px;
+          line-height: 1.8;
+          margin-bottom: 15px;
+      }
+
+      .post-date {
+          font-size: 14px;
+          color: #666;
+          display: block;
+          margin-top: 20px;
+          font-style: italic;
+      }
+
+      /* Footer styles */
+      .end {
+          background-color: #000;
+          color: #fff;
+          padding: 40px 20px;
+          text-align: center;
+      }
+
+      .end-head {
+          font-family: 'Roboto', sans-serif;
+          font-weight: 900;
+          font-size: 28px;
+          letter-spacing: 2px;
+          margin-bottom: 20px;
+      }
+
+      .footer-date {
+          font-size: 14px;
+          color: #aaa;
+          margin-top: 20px;
+      }
+
+      /* Desktop styles */
+      @media (min-width: 768px) {
+          .post-content {
+              flex-direction: row;
+          }
+
+          .post-content img {
+              max-width: 300px;
+              margin-right: 20px;
+          }
+      }
+
+      /* Mobile styles */
+      @media (max-width: 767px) {
+          /* Adjust header for mobile */
+          .main-header-div {
+              height: auto;
+              padding: 10px;
+          }
+          
+          .left-name {
+              font-size: 18px;
+              width: 25%;
+          }
+          
+          .center-title {
+              font-size: 18px;
+              width: 50%;
+              font-weight: 900;
+          }
+          
+          .right-spacer {
+              width: 25%;
+          }
+          
+          /* Adjust content for mobile */
+          body {
+              padding-top: 60px;
+          }
+          
+          .content {
+              padding: 20px 15px;
+          }
+          
+          .content h2 {
+              font-size: 24px;
+              margin-bottom: 30px;
+          }
+          
+          .post h3 {
+              font-size: 20px;
+          }
+          
+          .text-content h4 {
+              font-size: 18px;
+          }
+          
+          .text-content p {
+              font-size: 15px;
+              line-height: 1.6;
+          }
+          
+          /* Make images full width on mobile */
+          .post-content img {
+              width: 100%;
+              max-width: none;
+          }
+          
+          /* Reduce spacing for mobile */
+          .post {
+              margin-bottom: 40px;
+              padding-bottom: 30px;
+          }
+          
+          /* Footer adjustments */
+          .end {
+              padding: 30px 15px;
+          }
+          
+          .end-head {
+              font-size: 22px;
+          }
+      }
+      
+      /* Extra small devices */
+      @media (max-width: 480px) {
+          .main-header-div {
+              padding: 8px;
+          }
+          
+          .left-name {
+              font-size: 16px;
+          }
+          
+          .center-title {
+              font-size: 16px;
+          }
+          
+          .content h2 {
+              font-size: 22px;
+          }
+          
+          .post h3 {
+              font-size: 18px;
+          }
+          
+          .text-content h4 {
+              font-size: 16px;
+          }
+          
+          .text-content p {
+              font-size: 14px;
+          }
+          
+          body {
+              padding-top: 50px;
+          }
+      }
+    </style>
   </head>
 
   <body>
