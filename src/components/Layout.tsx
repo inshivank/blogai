@@ -18,6 +18,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="left-name">SHIVANK</div>
         <div className="center-title">THE BLOG</div>
         <div className="right-spacer">
+          <Link to="/" className="home-link" style={{ color: 'white', marginRight: '20px', textDecoration: 'none' }}>
+            Home
+          </Link>
           <Link to="/family-friends" className="family-friends-link">
             Family & Friends
           </Link>
